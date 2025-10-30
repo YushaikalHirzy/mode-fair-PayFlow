@@ -2,16 +2,18 @@
 
 1. **Build the project:**
    - Open a terminal in the project root.
-   - Run:
-     ```powershell
-  ./mvnw -q -DskipTests package
-     ```
+
+  - Run:
+```sh
+./mvnw -q -DskipTests package
+```
 
 2. **Start the application:**
-   - Run:
-     ```powershell
-  ./mvnw spring-boot:run
-     ```
+
+  - Run:
+```sh
+./mvnw spring-boot:run
+```
 
 
 3. **Access the app in your browser:**
