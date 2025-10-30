@@ -4,13 +4,13 @@
    - Open a terminal in the project root.
    - Run:
      ```powershell
-     & "c:\Users\hirzy\Desktop\Mode Fair\PayFlowV2\mvnw.cmd" -q -DskipTests package
+  ./mvnw -q -DskipTests package
      ```
 
 2. **Start the application:**
    - Run:
      ```powershell
-     & "c:\Users\hirzy\Desktop\Mode Fair\PayFlowV2\mvnw.cmd" spring-boot:run
+  ./mvnw spring-boot:run
      ```
 
 
