@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Merchant Login - PayFlow</title>
+    <link rel="stylesheet" href="/sdk/payflow.css"/>
+    <style>
+        .container { max-width: 420px; margin: 60px auto; padding: 24px; border: 1px solid #ddd; border-radius: 8px; }
+        input[type=text], input[type=password], input[type=email] { width: 100%; padding: 10px; margin: 8px 0; }
+        .btn { background: #1f7aec; color: white; border: none; padding: 10px 16px; border-radius: 4px; cursor: pointer; width: 100%; }
+        .muted { color: #666; font-size: 0.9em; }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self'"/>
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"/>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+</head>
+<body>
+<div class="container">
+    <h2>Merchant Login</h2>
+    <div th:if="${param.registered}">Registration successful. Please log in.</div>
+    <form method="post" th:action="@{/login}">
+        <label>Email</label>
+        <input type="text" name="username" placeholder="email@example.com" required>
+        <label>Password</label>
+        <input type="password" name="password" required>
+        <button class="btn" type="submit">Login</button>
+    </form>
+    <p class="muted">No account? <a href="/register">Register</a></p>
+    <p class="muted"><a href="/">Back to Demo</a></p>
+    <div th:if="${param.error}">Invalid credentials.</div>
+    <div th:if="${param.logout}">You have been logged out.</div>
+    <div class="muted"><a href="/h2-console" target="_blank">H2 Console</a></div>
+    
+</div>
+</body>
+</html>

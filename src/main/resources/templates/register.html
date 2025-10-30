@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Merchant - PayFlow</title>
+    <link rel="stylesheet" href="/sdk/payflow.css"/>
+    <style>
+        .container { max-width: 480px; margin: 60px auto; padding: 24px; border: 1px solid #ddd; border-radius: 8px; }
+        input[type=text], input[type=password], input[type=email] { width: 100%; padding: 10px; margin: 8px 0; }
+        .btn { background: #1f7aec; color: white; border: none; padding: 10px 16px; border-radius: 4px; cursor: pointer; width: 100%; }
+        .muted { color: #666; font-size: 0.9em; }
+        .error { color: #b00020; }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<div class="container">
+    <h2>Create Merchant Account</h2>
+    <div class="error" th:if="${error}" th:text="${error}"></div>
+    <form method="post" th:object="${form}">
+        <label>Name</label>
+        <input type="text" th:field="*{name}" placeholder="Your Store" required>
+        <label>Email</label>
+        <input type="email" th:field="*{email}" placeholder="owner@store.com" required>
+        <label>Password</label>
+        <input type="password" th:field="*{password}" required>
+        <button class="btn" type="submit">Register</button>
+    </form>
+    <p class="muted">Already have an account? <a href="/login">Login</a></p>
+    <p class="muted"><a href="/">Back to Demo</a></p>
+</div>
+</body>
+</html>

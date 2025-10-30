@@ -1,0 +1,12 @@
+:root { --pf-accent: #1f7aec; }
+.pf-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 9999; }
+.pf-modal { background: white; width: 100%; max-width: 420px; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.pf-header { background: var(--pf-accent); color: white; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; }
+.pf-header h3 { margin: 0; font-size: 16px; }
+.pf-body { padding: 16px; }
+.pf-row { display: flex; gap: 10px; }
+.pf-input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ddd; border-radius: 6px; }
+.pf-btn { background: var(--pf-accent); color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; width: 100%; }
+.pf-close { cursor: pointer; opacity: 0.8; }
+.pf-error { color: #b00020; font-size: 0.9em; min-height: 18px; }
+.pf-muted { color: #666; font-size: 0.85em; }

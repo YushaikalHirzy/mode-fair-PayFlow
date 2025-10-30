@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings - PayFlow</title>
+    <link rel="stylesheet" href="/sdk/payflow.css"/>
+    <style>
+        body { max-width: 720px; margin: 24px auto; padding: 0 16px; }
+        input[type=text] { width: 100%; padding: 10px; margin: 8px 0; }
+        .btn { background: #1f7aec; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; }
+        .muted { color: #666; font-size: 0.9em; }
+        .row { display: flex; align-items: center; gap: 12px; }
+        code { background: #f5f5f5; padding: 4px 6px; border-radius: 4px; }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<h2>Settings</h2>
+<p th:if="${param.saved}">Settings saved.</p>
+
+<h3>API Key</h3>
+<div class="row">
+    <code th:text="${merchant.apiKey}"></code>
+    <button class="btn" type="button" onclick="navigator.clipboard.writeText(document.querySelector('code').textContent)">Copy</button>
+    <a class="btn" href="/demo" target="_blank">Open Demo</a>
+    <a class="btn" href="/portal/dashboard">Back</a>
+    <a class="btn" href="/logout">Logout</a>
+    
+</div>
+<p class="muted">Use this key in the <strong>X-API-KEY</strong> header when calling the Payment API, or when initializing the JavaScript SDK.</p>
+
+<h3>Webhook URL</h3>
+<form method="post">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    <label>Webhook URL (optional)</label>
+    <input type="text" name="webhookUrl" th:value="${merchant.webhookUrl}" placeholder="https://yourapp.com/webhooks/payflow">
+    <button class="btn" type="submit">Save</button>
+    <p class="muted">We'll POST payment events to this URL after processing.</p>
+</form>
+
+</body>
+</html>

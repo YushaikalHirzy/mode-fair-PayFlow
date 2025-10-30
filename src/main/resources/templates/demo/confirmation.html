@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Confirmation - PayFlow Demo</title>
+    <link rel="stylesheet" href="/sdk/payflow.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        body { max-width: 720px; margin: 60px auto; padding: 0 16px; text-align: center; }
+        .card { border: 1px solid #ddd; border-radius: 8px; padding: 24px; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>Payment Successful</h2>
+    <p>Your transaction ID:</p>
+    <code th:text="${transactionId}"></code>
+    <p><a href="/demo">Back to Store</a></p>
+</div>
+</body>
+</html>
